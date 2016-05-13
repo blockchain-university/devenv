@@ -30,6 +30,7 @@ ARCH=amd64
 GO_VER=1.6
 
 cd /tmp
+# wget --quiet --no-check-certificate
 wget --quiet --no-check-certificate https://storage.googleapis.com/golang/go$GO_VER.linux-${ARCH}.tar.gz
 tar -xvf go$GO_VER.linux-${ARCH}.tar.gz
 mv go $GOROOT
@@ -52,16 +53,16 @@ EOF
 #./configure && make && sudo make install
 #cd /tmp && rm -rf node-v$ver
 
-NODE_VER=0.12.7
-NODE_PACKAGE=node-v$NODE_VER-linux-x64.tar.gz
+NODE_VER=4.4.4
+NODE_PACKAGE=node-v$NODE_VER-linux-x64.tar.xz
 TEMP_DIR=/tmp
 SRC_PATH=$TEMP_DIR/$NODE_PACKAGE
 
 cd $TEMP_DIR
 # First remove any prior packages downloaded in case of failure
-rm -f node*.tar.gz
+rm -f node*.tar.xz
 wget --quiet https://nodejs.org/dist/v$NODE_VER/$NODE_PACKAGE
-cd /usr/local && sudo tar --strip-components 1 -xzf $SRC_PATH
+cd /usr/local && sudo tar --strip-components 1 -xf $SRC_PATH
 
 # Install GRPC
 

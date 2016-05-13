@@ -40,7 +40,7 @@ Vagrant.configure('2') do |config|
   config.vm.synced_folder ENV.fetch('LOCALDEVDIR', ".."), "#{LOCALDEV}"
 
   config.vm.provider :virtualbox do |vb|
-    vb.name = "hyperledger"
+    vb.name = "bcuchain"
     vb.customize ['modifyvm', :id, '--memory', '4096']
     vb.cpus = 2
 
