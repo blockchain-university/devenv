@@ -44,14 +44,14 @@ EOF
 
 
 # Install NodeJS
-#cd /tmp
-#ver=0.12.7 #Replace this with the latest version available
-#wget -c http://nodejs.org/dist/v$ver/node-v$ver.tar.gz #This is to download the source code.
-#tar -xzf node-v$ver.tar.gz
-#rm node-v$ver.tar.gz
-#cd node-v$ver
-#./configure && make && sudo make install
-#cd /tmp && rm -rf node-v$ver
+# cd /tmp
+# ver=0.12.7 #Replace this with the latest version available
+# wget -c http://nodejs.org/dist/v$ver/node-v$ver.tar.gz #This is to download the source code.
+# tar -xzf node-v$ver.tar.gz
+# rm node-v$ver.tar.gz
+# cd node-v$ver
+# ./configure && make && sudo make install
+# cd /tmp && rm -rf node-v$ver
 
 NODE_VER=4.4.4
 NODE_PACKAGE=node-v$NODE_VER-linux-x64.tar.xz
@@ -109,7 +109,7 @@ ldconfig
 cd ~/
 
 # Make our versioning persistent
-echo $BASEIMAGE_RELEASE > /etc/hyperledger-baseimage-release
+echo $BASEIMAGE_RELEASE > /etc/bcuenv-baseimage-release
 
 # clean up our environment
 apt-get -y autoremove
